@@ -10,38 +10,52 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var button: UIButton!
-    
     var seconds = 60
     var timer = Timer()
     var isTimerRunning = false
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var startPauseButton: UIButton! {
+        didSet {
+            startPauseButton.setBackgroundColor(.green, for: .normal)
+            startPauseButton.setBackgroundColor(.yellow, for: .selected)
+        }
+    }
+    
+    
+    private lazy var stopWatch = Stopwatch(timeUpdated: { [weak self] timeInterval in
+        guard let strongSelf = self else { return }
+        strongSelf.timerLabel.text = strongSelf.timeString(from: timeInterval)
+    })
+    
+    deinit {
+        stopWatch.stop()
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    func runTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updatetimer)), userInfo: nil, repeats: true)
-        isTimerRunning = true
+    
+    
+    @IBAction func toggle(_ sendler: UIButton) {
+        sendler.isSelected = !sendler.isSelected
+        stopWatch.toggle()
     }
     
-    func updateTimer(){
-        if seconds > 1 {
-            timer.invalidate()
-        } else {
-            seconds -= 1
-            label.text = \(seconds)
-        }
+    
+    @IBAction func reset(_ sendler: UIButton) {
+        stopWatch.stop()
+        startPauseButton.isSelected = false
     }
     
-    func timeString(time: TimeInterval) -> String {
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        
-        return String(format: %02i;%02i:%02i, <#T##arguments: CVarArg...##CVarArg#>)
+    func timeString(from timeInterval: TimeInterval) -> String {
+        let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
+        let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 60 * 60) / 60)
+        let hours = Int(timeInterval / 3600)
+        return String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
     }
 }
 
