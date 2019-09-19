@@ -1,5 +1,5 @@
 //
-//  TimerViewController.swift
+//  WalkViewController.swift
 //  nano
 //
 //  Created by Ilyasa Azmi on 19/09/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimerViewController: UIViewController {
+class WalkViewController: UIViewController {
     
     var seconds = 60
     var timer = Timer()
@@ -57,9 +57,7 @@ class TimerViewController: UIViewController {
         let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
         let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 60 * 60) / 60)
         let hours = Int(timeInterval / 3600)
-        return String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
+        return String(format: "%.2d:%.2d", minutes, seconds)
     }
-    
-    
 
 }

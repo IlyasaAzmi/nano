@@ -15,6 +15,12 @@
 		EDD4F14823331DFE00488F1D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F14723331DFE00488F1D /* TimerViewController.swift */; };
 		EDD4F14A233322A900488F1D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F149233322A900488F1D /* UIButtonExtension.swift */; };
 		EDD4F14C233331E300488F1D /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F14B233331E300488F1D /* Stopwatch.swift */; };
+		EDD4F14E23336C4200488F1D /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F14D23336C4200488F1D /* StatsViewController.swift */; };
+		EDD4F150233381E200488F1D /* RestBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F14F233381E200488F1D /* RestBreakViewController.swift */; };
+		EDD4F1522333822E00488F1D /* WalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F1512333822E00488F1D /* WalkViewController.swift */; };
+		EDD4F154233382F000488F1D /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F153233382F000488F1D /* RunViewController.swift */; };
+		EDD4F1562333830100488F1D /* PushUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F1552333830100488F1D /* PushUpViewController.swift */; };
+		EDD4F1582333830E00488F1D /* SitUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F1572333830E00488F1D /* SitUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		EDD4F14723331DFE00488F1D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		EDD4F149233322A900488F1D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		EDD4F14B233331E300488F1D /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		EDD4F14D23336C4200488F1D /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		EDD4F14F233381E200488F1D /* RestBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBreakViewController.swift; sourceTree = "<group>"; };
+		EDD4F1512333822E00488F1D /* WalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkViewController.swift; sourceTree = "<group>"; };
+		EDD4F153233382F000488F1D /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
+		EDD4F1552333830100488F1D /* PushUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpViewController.swift; sourceTree = "<group>"; };
+		EDD4F1572333830E00488F1D /* SitUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +76,17 @@
 				EDD4F13723320BF700488F1D /* ViewController.swift */,
 				EDD4F14B233331E300488F1D /* Stopwatch.swift */,
 				EDD4F13923320BF700488F1D /* Main.storyboard */,
+				EDD4F14D23336C4200488F1D /* StatsViewController.swift */,
 				EDD4F149233322A900488F1D /* UIButtonExtension.swift */,
 				EDD4F14723331DFE00488F1D /* TimerViewController.swift */,
 				EDD4F13C23320BF700488F1D /* Assets.xcassets */,
 				EDD4F13E23320BF700488F1D /* LaunchScreen.storyboard */,
 				EDD4F14123320BF700488F1D /* Info.plist */,
+				EDD4F14F233381E200488F1D /* RestBreakViewController.swift */,
+				EDD4F1512333822E00488F1D /* WalkViewController.swift */,
+				EDD4F153233382F000488F1D /* RunViewController.swift */,
+				EDD4F1552333830100488F1D /* PushUpViewController.swift */,
+				EDD4F1572333830E00488F1D /* SitUpViewController.swift */,
 			);
 			path = nano;
 			sourceTree = "<group>";
@@ -145,9 +163,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDD4F13823320BF700488F1D /* ViewController.swift in Sources */,
+				EDD4F154233382F000488F1D /* RunViewController.swift in Sources */,
+				EDD4F1522333822E00488F1D /* WalkViewController.swift in Sources */,
 				EDD4F14A233322A900488F1D /* UIButtonExtension.swift in Sources */,
+				EDD4F150233381E200488F1D /* RestBreakViewController.swift in Sources */,
+				EDD4F1562333830100488F1D /* PushUpViewController.swift in Sources */,
 				EDD4F14C233331E300488F1D /* Stopwatch.swift in Sources */,
 				EDD4F14823331DFE00488F1D /* TimerViewController.swift in Sources */,
+				EDD4F1582333830E00488F1D /* SitUpViewController.swift in Sources */,
+				EDD4F14E23336C4200488F1D /* StatsViewController.swift in Sources */,
 				EDD4F13623320BF700488F1D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  TimerViewController.swift
+//  PushUpViewController.swift
 //  nano
 //
 //  Created by Ilyasa Azmi on 19/09/19.
@@ -8,20 +8,21 @@
 
 import UIKit
 
-class TimerViewController: UIViewController {
+class PushUpViewController: UIViewController {
     
     var seconds = 60
     var timer = Timer()
     var isTimerRunning = false
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var pushUpCountLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton! {
         didSet {
             startPauseButton.setBackgroundColor(.green, for: .normal)
             startPauseButton.setBackgroundColor(.yellow, for: .selected)
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +39,6 @@ class TimerViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
     private lazy var stopWatch = Stopwatch(timeUpdated: { [weak self] timeInterval in
         guard let strongSelf = self else { return }
         strongSelf.timerLabel.text = strongSelf.timeString(from: timeInterval)
@@ -57,9 +57,7 @@ class TimerViewController: UIViewController {
         let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
         let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 60 * 60) / 60)
         let hours = Int(timeInterval / 3600)
-        return String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
+        return String(format: "%.2d:%.2d", minutes, seconds)
     }
-    
-    
 
 }
