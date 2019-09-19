@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED8E4A592333BBDE00A152EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8E4A582333BBDE00A152EF /* HealthKit.framework */; };
 		EDD4F13623320BF700488F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F13523320BF700488F1D /* AppDelegate.swift */; };
 		EDD4F13823320BF700488F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F13723320BF700488F1D /* ViewController.swift */; };
 		EDD4F13B23320BF700488F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD4F13923320BF700488F1D /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED8E4A562333BBDE00A152EF /* nano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nano.entitlements; sourceTree = "<group>"; };
+		ED8E4A582333BBDE00A152EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		EDD4F13223320BF700488F1D /* nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD4F13523320BF700488F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD4F13723320BF700488F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,17 +50,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8E4A592333BBDE00A152EF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED8E4A572333BBDE00A152EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E4A582333BBDE00A152EF /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EDD4F12923320BF600488F1D = {
 			isa = PBXGroup;
 			children = (
 				EDD4F13423320BF700488F1D /* nano */,
 				EDD4F13323320BF700488F1D /* Products */,
+				ED8E4A572333BBDE00A152EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +85,7 @@
 		EDD4F13423320BF700488F1D /* nano */ = {
 			isa = PBXGroup;
 			children = (
+				ED8E4A562333BBDE00A152EF /* nano.entitlements */,
 				EDD4F13523320BF700488F1D /* AppDelegate.swift */,
 				EDD4F13723320BF700488F1D /* ViewController.swift */,
 				EDD4F14B233331E300488F1D /* Stopwatch.swift */,
@@ -123,6 +137,11 @@
 				TargetAttributes = {
 					EDD4F13123320BF700488F1D = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -318,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = nano/nano.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MVSY5VDK93;
 				INFOPLIST_FILE = nano/Info.plist;
@@ -336,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = nano/nano.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MVSY5VDK93;
 				INFOPLIST_FILE = nano/Info.plist;
