@@ -23,7 +23,6 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var pushUpNumberLabel: UILabel!
     @IBOutlet weak var sitUpNumberLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         otorisasiHealthKit()
