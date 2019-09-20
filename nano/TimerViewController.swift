@@ -19,13 +19,14 @@ class TimerViewController: UIViewController {
         didSet {
             startPauseButton.setBackgroundColor(.green, for: .normal)
             startPauseButton.setBackgroundColor(.yellow, for: .selected)
+            startPauseButton.setTitle("Pause", for: .selected)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        startPauseButton.layer.cornerRadius = startPauseButton.frame.size.width/2
     }
     
 

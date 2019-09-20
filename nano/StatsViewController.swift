@@ -50,17 +50,20 @@ class StatsViewController: UIViewController {
         guard let stepsSampleType  = HKSampleType.quantityType(forIdentifier: .stepCount) else { return }
         
         //predicate boleh nil
-        let startDate = Date.distantPast
+//        let startDate = Date.distantPast
+        let cal = Calendar(identifier: .gregorian)
+        let noLimit = HKObjectQueryNoLimit
         let today = Date()
+        let startDate = cal.date(bySettingHour: 0, minute: 0, second: 0, of: today)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: today, options: .strictEndDate)
         
         //limit
-        let limit = 1
+//        let limit = 1
         
         //descriptor boleh nil
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        let stepsSampleQuery = HKSampleQuery(sampleType: stepsSampleType, predicate: predicate, limit: limit, sortDescriptors: [sortDescriptor]) { (query, resultSamples, error) in
+        let stepsSampleQuery = HKSampleQuery(sampleType: stepsSampleType, predicate: predicate, limit: noLimit, sortDescriptors: [sortDescriptor]) { (query, resultSamples, error) in
             DispatchQueue.main.async {
                 guard let samples = resultSamples as? [HKQuantitySample] else { return }
                 
@@ -77,21 +80,24 @@ class StatsViewController: UIViewController {
     }
     
     func ngambilDataDistances() {
-        // Read BMI
+        // Read Walking Distances
         guard let distancesSampleType  = HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning) else { return }
         
         //predicate boleh nil
-        let startDate = Date.distantPast
+//        let startDate = Date.distantPast
+        let cal = Calendar(identifier: .gregorian)
+        let noLimit = HKObjectQueryNoLimit
         let today = Date()
+        let startDate = cal.date(bySettingHour: 0, minute: 0, second: 0, of: today)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: today, options: .strictEndDate)
         
         //limit
-        let limit = 1
+//        let limit = 1
         
         //descriptor boleh nil
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        let distancesSampleQuery = HKSampleQuery(sampleType: distancesSampleType, predicate: predicate, limit: limit, sortDescriptors: [sortDescriptor]) { (query, resultSamples, error) in
+        let distancesSampleQuery = HKSampleQuery(sampleType: distancesSampleType, predicate: predicate, limit: noLimit, sortDescriptors: [sortDescriptor]) { (query, resultSamples, error) in
             DispatchQueue.main.async {
                 guard let samples = resultSamples as? [HKQuantitySample] else { return }
                 

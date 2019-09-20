@@ -25,7 +25,7 @@ class WalkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        startPauseButton.layer.cornerRadius = startPauseButton.frame.size.width/2
     }
     
 

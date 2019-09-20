@@ -19,14 +19,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var startPauseButton: UIButton! {
         didSet {
             startPauseButton.setBackgroundColor(.green, for: .normal)
-            startPauseButton.setBackgroundColor(.yellow, for: .selected)
+            startPauseButton.setBackgroundColor(.gray, for: .selected)
+            startPauseButton.setTitle("Pause", for: .selected)
         }
     }
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var statisticsButton: UIButton!
-    @IBOutlet weak var pointsButton: UIButton!
     @IBOutlet weak var timerView: UIView!
+    
     
     
     // An authentication context stored at class scope so it's available for use during UI updates.
@@ -53,7 +54,6 @@ class ViewController: UIViewController {
             resetButton.isHidden = (state == .loggedout)
             nextButton.isHidden = (state == .loggedout)
             statisticsButton.isHidden = (state == .loggedout)
-            pointsButton.isHidden = (state == .loggedout)
         }
     }
     
@@ -71,6 +71,10 @@ class ViewController: UIViewController {
         // Set the initial app state. This impacts the initial state of the UI as well.
         state = .loggedout
         loginFaceId()
+        
+        startPauseButton.layer.cornerRadius = startPauseButton.frame.size.width/2
+        resetButton.layer.cornerRadius = resetButton.frame.size.width/2
+        resetButton.backgroundColor = .yellow
     }
     
     @IBAction func tapLoginButton(_ sender: Any) {

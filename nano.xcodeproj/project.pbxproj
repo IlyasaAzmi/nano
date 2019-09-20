@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		ED8E4A562333BBDE00A152EF /* nano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nano.entitlements; sourceTree = "<group>"; };
 		ED8E4A582333BBDE00A152EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		ED8E4A5A2333D30400A152EF /* Success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Success.m4a; sourceTree = "<group>"; };
 		EDD4F13223320BF700488F1D /* nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD4F13523320BF700488F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD4F13723320BF700488F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 				EDD4F153233382F000488F1D /* RunViewController.swift */,
 				EDD4F1552333830100488F1D /* PushUpViewController.swift */,
 				EDD4F1572333830E00488F1D /* SitUpViewController.swift */,
+				ED8E4A5A2333D30400A152EF /* Success.m4a */,
 			);
 			path = nano;
 			sourceTree = "<group>";
