@@ -9,7 +9,12 @@
 import UIKit
 
 class RestBreakViewController: UIViewController {
-
+    
+    @IBOutlet weak var walkButton: UIButton!
+    @IBOutlet weak var runButton: UIButton!
+    @IBOutlet weak var pushUpButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

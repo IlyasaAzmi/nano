@@ -64,6 +64,7 @@ class StatsViewController: UIViewController {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
         let stepsSampleQuery = HKSampleQuery(sampleType: stepsSampleType, predicate: predicate, limit: noLimit, sortDescriptors: [sortDescriptor]) { (query, resultSamples, error) in
+            var total = 0
             DispatchQueue.main.async {
                 guard let samples = resultSamples as? [HKQuantitySample] else { return }
                 
@@ -71,8 +72,9 @@ class StatsViewController: UIViewController {
                     let timestamp = sample.startDate
                     let stepsValue = sample.quantity.doubleValue(for: .count())
                     let stepsShort = Int(stepsValue)
+                    total += stepsShort
                     print("Date = \(timestamp) Jumlah Steps =  \(stepsShort)")
-                    self.stepCountNumberLabel.text = String(stepsShort)
+                    self.stepCountNumberLabel.text = String(total)
                 }
             }
         }
@@ -98,15 +100,19 @@ class StatsViewController: UIViewController {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
         let distancesSampleQuery = HKSampleQuery(sampleType: distancesSampleType, predicate: predicate, limit: noLimit, sortDescriptors: [sortDescriptor]) { (query, resultSamples, error) in
+            //set variable total
+            var total = 0.0
             DispatchQueue.main.async {
                 guard let samples = resultSamples as? [HKQuantitySample] else { return }
                 
                 for sample in samples {
                     let timestamp = sample.startDate
                     let distancesValue = sample.quantity.doubleValue(for: .meter())
-                    let distancesInKm = Int(distancesValue)
-                    print("Date = \(timestamp) Jarak Tempuh =  \(distancesInKm)")
-                    self.distanceNumberLabel.text = String(distancesInKm)
+                    let distancesInKm = distancesValue
+                    total += distancesInKm
+                    let intTotal = Int(total)
+                    print("Date = \(timestamp) Jarak Tempuh =  \(intTotal)")
+                    self.distanceNumberLabel.text = String(intTotal)
                 }
             }
         }

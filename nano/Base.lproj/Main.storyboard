@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmU-lS-eQ4">
-                                <rect key="frame" x="80" y="613.5" width="80" height="80"/>
+                                <rect key="frame" x="80" y="536" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Me6-Eg-UoG"/>
                                     <constraint firstAttribute="width" constant="80" id="gao-0g-PEG"/>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osb-Ao-TTk">
-                                <rect key="frame" x="254" y="613.5" width="80" height="80"/>
+                                <rect key="frame" x="254" y="536" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="WL3-52-aej"/>
                                     <constraint firstAttribute="height" constant="80" id="dVn-I5-bMR"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computer" translatesAutoresizingMaskIntoConstraints="NO" id="htN-co-3qx">
-                                <rect key="frame" x="122" y="363" width="170.5" height="170.5"/>
+                                <rect key="frame" x="199" y="440" width="16" height="16"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auw-eW-S6F">
                                 <rect key="frame" x="20" y="64" width="64" height="30"/>
@@ -309,6 +309,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LE4-ze-TDO"/>
                     </view>
+                    <connections>
+                        <outlet property="pushUpButton" destination="lou-ew-SBg" id="zNN-ti-nuW"/>
+                        <outlet property="runButton" destination="rDU-ZK-lWP" id="B5h-pG-bSq"/>
+                        <outlet property="walkButton" destination="KGG-dQ-Hhz" id="HUh-u1-VW0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAB-Ds-Urc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
