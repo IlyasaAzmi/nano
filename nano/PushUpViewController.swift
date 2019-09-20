@@ -20,7 +20,8 @@ class PushUpViewController: UIViewController {
     @IBOutlet weak var startPauseButton: UIButton! {
         didSet {
             startPauseButton.setBackgroundColor(.green, for: .normal)
-            startPauseButton.setBackgroundColor(.yellow, for: .selected)
+            startPauseButton.setBackgroundColor(.gray, for: .selected)
+            startPauseButton.setTitle("Pause", for: .selected)
         }
     }
     
@@ -63,8 +64,6 @@ class PushUpViewController: UIViewController {
         return String(format: "%.2d:%.2d", minutes, seconds)
     }
     
-    
-    
     func playSound() {
         guard let url = Bundle.main.url(forResource: "Success", withExtension: "m4a") else { return }
         
@@ -86,6 +85,5 @@ class PushUpViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    
 
 }

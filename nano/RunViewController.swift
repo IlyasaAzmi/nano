@@ -18,14 +18,15 @@ class RunViewController: UIViewController {
     @IBOutlet weak var startPauseButton: UIButton! {
         didSet {
             startPauseButton.setBackgroundColor(.green, for: .normal)
-            startPauseButton.setBackgroundColor(.yellow, for: .selected)
+            startPauseButton.setBackgroundColor(.gray, for: .selected)
+            startPauseButton.setTitle("Pause", for: .selected)
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        startPauseButton.layer.cornerRadius = startPauseButton.frame.size.width/2
     }
     
 

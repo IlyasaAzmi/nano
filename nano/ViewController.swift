@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -27,8 +28,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var statisticsButton: UIButton!
     @IBOutlet weak var timerView: UIView!
+    @IBOutlet weak var computerImage: UIImageView!
     
-    
+    var player: AVAudioPlayer?
     
     // An authentication context stored at class scope so it's available for use during UI updates.
     var context = LAContext()
@@ -54,6 +56,7 @@ class ViewController: UIViewController {
             resetButton.isHidden = (state == .loggedout)
             nextButton.isHidden = (state == .loggedout)
             statisticsButton.isHidden = (state == .loggedout)
+            computerImage.isHidden = (state == .loggedout)
         }
     }
     
@@ -193,7 +196,30 @@ class ViewController: UIViewController {
         let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
         let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 60 * 60) / 60)
         let hours = Int(timeInterval / 3600)
+        print(seconds)
+        if seconds == 20 {
+            playSound()
+        }
         return String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
+        
+    }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "water", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
 

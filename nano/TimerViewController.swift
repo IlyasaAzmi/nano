@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TimerViewController: UIViewController {
     
@@ -18,10 +19,12 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var startPauseButton: UIButton! {
         didSet {
             startPauseButton.setBackgroundColor(.green, for: .normal)
-            startPauseButton.setBackgroundColor(.yellow, for: .selected)
+            startPauseButton.setBackgroundColor(.gray, for: .selected)
             startPauseButton.setTitle("Pause", for: .selected)
         }
     }
+    
+    var player: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +61,29 @@ class TimerViewController: UIViewController {
         let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
         let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 60 * 60) / 60)
         let hours = Int(timeInterval / 3600)
+        print(seconds)
+        if seconds == 20 {
+            playSound()
+        }
         return String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
     }
     
-    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "water", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 
 }

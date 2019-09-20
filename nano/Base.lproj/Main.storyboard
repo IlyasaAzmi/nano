@@ -88,6 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="computerImage" destination="htN-co-3qx" id="UbK-IM-XKM"/>
                         <outlet property="nextButton" destination="Lof-WX-Gtl" id="jS4-Uj-zov"/>
                         <outlet property="resetButton" destination="vmU-lS-eQ4" id="2zu-F1-bis"/>
                         <outlet property="startPauseButton" destination="osb-Ao-TTk" id="5l7-w7-ida"/>

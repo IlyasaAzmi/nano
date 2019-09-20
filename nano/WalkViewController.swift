@@ -18,7 +18,8 @@ class WalkViewController: UIViewController {
     @IBOutlet weak var startPauseButton: UIButton! {
         didSet {
             startPauseButton.setBackgroundColor(.green, for: .normal)
-            startPauseButton.setBackgroundColor(.yellow, for: .selected)
+            startPauseButton.setBackgroundColor(.gray, for: .selected)
+            startPauseButton.setTitle("Pause", for: .selected)
         }
     }
     
@@ -56,7 +57,7 @@ class WalkViewController: UIViewController {
     func timeString(from timeInterval: TimeInterval) -> String {
         let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
         let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 60 * 60) / 60)
-        let hours = Int(timeInterval / 3600)
+//        let hours = Int(timeInterval / 3600)
         return String(format: "%.2d:%.2d", minutes, seconds)
     }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED8E4A592333BBDE00A152EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8E4A582333BBDE00A152EF /* HealthKit.framework */; };
+		ED8E4A5C2334715700A152EF /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED8E4A5B2334715700A152EF /* water.mp3 */; };
 		EDD4F13623320BF700488F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F13523320BF700488F1D /* AppDelegate.swift */; };
 		EDD4F13823320BF700488F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4F13723320BF700488F1D /* ViewController.swift */; };
 		EDD4F13B23320BF700488F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD4F13923320BF700488F1D /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		ED8E4A562333BBDE00A152EF /* nano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nano.entitlements; sourceTree = "<group>"; };
 		ED8E4A582333BBDE00A152EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		ED8E4A5A2333D30400A152EF /* Success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Success.m4a; sourceTree = "<group>"; };
+		ED8E4A5B2334715700A152EF /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
 		EDD4F13223320BF700488F1D /* nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD4F13523320BF700488F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD4F13723320BF700488F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				EDD4F1552333830100488F1D /* PushUpViewController.swift */,
 				EDD4F1572333830E00488F1D /* SitUpViewController.swift */,
 				ED8E4A5A2333D30400A152EF /* Success.m4a */,
+				ED8E4A5B2334715700A152EF /* water.mp3 */,
 			);
 			path = nano;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8E4A5C2334715700A152EF /* water.mp3 in Resources */,
 				EDD4F14023320BF700488F1D /* LaunchScreen.storyboard in Resources */,
 				EDD4F13D23320BF700488F1D /* Assets.xcassets in Resources */,
 				EDD4F13B23320BF700488F1D /* Main.storyboard in Resources */,
