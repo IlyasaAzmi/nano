@@ -21,25 +21,16 @@ class PushUpViewController: UIViewController {
     var isProximity = false
     var pitchDegree = 0
     var intruksiInt = 0
-    var hitung = 0.0
+    var hitung = 0
     
-    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var pushUpCountLabel: UILabel!
-    @IBOutlet weak var startPauseButton: UIButton! {
-        didSet {
-            startPauseButton.setBackgroundColor(.green, for: .normal)
-            startPauseButton.setBackgroundColor(.gray, for: .selected)
-            startPauseButton.setTitle("Pause", for: .selected)
-        }
-    }
-    
+    @IBOutlet weak var doneButton: UIButton!
     var player: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startPauseButton.layer.cornerRadius = startPauseButton.frame.size.width/2
+        doneButton.layer.cornerRadius = doneButton.frame.size.width/2
         otorisasiHealthKit()
-        savePushUpCount(value: 200.0)
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -49,12 +40,9 @@ class PushUpViewController: UIViewController {
     
     func activateProximitySensor(isOn: Bool) {
         let device = UIDevice.current
-//        var checkProx = 0
         device.isProximityMonitoringEnabled = isOn
         if isOn {
             NotificationCenter.default.addObserver(self, selector: #selector(proximityStateDidChange), name: UIDevice.proximityStateDidChangeNotification, object: device)
-//            checkProx += 1
-//            print(checkProx)
         } else {
             NotificationCenter.default.removeObserver(self, name: UIDevice.proximityStateDidChangeNotification, object: device)
         }
@@ -62,13 +50,10 @@ class PushUpViewController: UIViewController {
     
     @objc func proximityStateDidChange(notification: NSNotification) {
         if let device = notification.object as? UIDevice {
-//            print(device.proximityState, pitchDegree)
-            
             isProximity = device.proximityState == true
             if (device.proximityState == true) {
                 print("ok")
                 hitung += 1
-                savePushUpCount(value: 1)
                 print(hitung)
                 
                 self.pushUpCountLabel.text = String(hitung)
@@ -78,18 +63,8 @@ class PushUpViewController: UIViewController {
         }
     }
     
-    private lazy var stopWatch = Stopwatch(timeUpdated: { [weak self] timeInterval in
-        guard let strongSelf = self else { return }
-        strongSelf.timerLabel.text = strongSelf.timeString(from: timeInterval)
-    })
-    
-    deinit {
-        stopWatch.stop()
-    }
-    
-    @IBAction func toggle(_ sendler: UIButton) {
-        sendler.isSelected = !sendler.isSelected
-        stopWatch.toggle()
+    @IBAction func done(_ sender: UIButton){
+        savePushUpCount(value: Double(hitung))
     }
     
     func timeString(from timeInterval: TimeInterval) -> String {
